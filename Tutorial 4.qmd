@@ -10,6 +10,10 @@ format: html
 #| warning: false
 library(ggplot2)
 library(palmerpenguins)
+library(dplyr)
+```
+
+```{r}
 
 ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g, color = species)) +
   geom_point() +
@@ -21,7 +25,8 @@ ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g, color = species)) +
 ```{r}
 #| label: tbl-penguin-summary
 #| tbl-cap: "Mean body mass of penguins by species and sex."
-library(dplyr)
+#| warning: false
+
 
 penguins |>
   filter(!is.na(sex)) |>
@@ -31,3 +36,8 @@ penguins |>
 ```
 
 ## Reference
+
+@fig-penguins-scatter describes the flipper length to the body mass of 3 different species of penguins.
+
+@tbl-penguin-summary is just a table
+
