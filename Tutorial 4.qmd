@@ -16,5 +16,18 @@ ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g, color = species)) +
   theme_minimal()
 ```
 
+## This is a table
+
+```{r}
+#| label: tbl-penguin-summary
+#| tbl-cap: "Mean body mass of penguins by species and sex."
+library(dplyr)
+
+penguins |>
+  filter(!is.na(sex)) |>
+  group_by(species, sex) |>
+  summarise(mean_mass = mean(body_mass_g)) |>
+  knitr::kable()
+```
 
 ## Reference
