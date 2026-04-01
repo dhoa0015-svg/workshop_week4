@@ -1,25 +1,28 @@
 ---
 title: "Untitled"
 format: html
+bibliography: references.bib
 ---
 
 ## This is a chart
 ```{r}
-#| label: fig-penguins-scatter
-#| fig-cap: "Body mass vs. Flipper length for three penguin species."
-#| warning: false
+
 library(ggplot2)
 library(palmerpenguins)
 library(dplyr)
 ```
 
 ```{r}
+#| label: fig-penguins-scatter
+#| fig-cap: "Body mass vs. Flipper length for three penguin species."
+#| warning: false
 
 ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g, color = species)) +
   geom_point() +
   theme_minimal()
 ```
 
+#
 ## This is a table
 
 ```{r}
@@ -35,9 +38,12 @@ penguins |>
   knitr::kable()
 ```
 
-## Reference
+## Task 3: Citation
 
 @fig-penguins-scatter describes the flipper length to the body mass of 3 different species of penguins.
 
 @tbl-penguin-summary is just a table
+
+* Parenthetical: The data was originally collected by Gorman et al. [@penguins_data].
+* Narrative: @penguins_data argues that…
 
